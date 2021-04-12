@@ -6,31 +6,31 @@ Bookmarks application allows you to collect and manage your most visited or favo
 
 ## Screenshots of the working solutionscription
 <p><strong>Main page (desktop)</strong></p>
-<img src="images/bookmarks-app_main-page_desktop.jpg" width="500" alt="Main page (desktop)" />
+<img src="screenshots/bookmarks-app_main-page_desktop.jpg" width="100%" alt="Main page (desktop)" />
 <br />
 
 <p><strong>Main page (mobile)</strong></p>
-<img src="images/bookmarks-app_main-page_mobile.jpg" width="320" alt="Main page (mobile)" />
+<img src="screenshots/bookmarks-app_main-page_mobile.jpg" width="320" alt="Main page (mobile)" />
 <br />
 
 <p><strong>Add new bookmark (tablet)</strong></p>
-<img src="images/bookmarks-app_add-new_tablet.jpg" width="500" alt="Add new bookmark (tablet)" />
+<img src="screenshots/bookmarks-app_add-new_tablet.jpg" width="100%" alt="Add new bookmark (tablet)" />
 <br />
 
 <p><strong>Bookmarks list sorted on groups</strong></p>
-<img src="images/bookmarks-app_list-of-bookmarks-by-group.jpg" width="500" alt="Bookmarks list sorted on groups" />
+<img src="screenshots/bookmarks-app_list-of-bookmarks-by-group.jpg" width="100%" alt="Bookmarks list sorted on groups" />
 <br />
 
 <p><strong>Bookmark details page</strong></p>
-<img src="images/bookmarks-app_bookmark-info-page.jpg" width="500" alt="Bookmark details page" />
+<img src="screenshots/bookmarks-app_bookmark-info-page.jpg" width="100%" alt="Bookmark details page" />
 <br />
 
 <p><strong>Delete bookmark interface</strong></p>
-<img src="images/bookmarks-app_confirm-delete.jpg.jpg" width="500" alt="Delete bookmark interface" />
+<img src="screenshots/bookmarks-app_confirm-delete.jpg" width="100%" alt="Delete bookmark interface" />
 <br />
 
 <p><strong>Test coverage</strong></p>
-<img src="images/test-coverage.jpg" width="500" alt="Test coverage" />
+<img src="screenshots/test-coverage.jpg" width="100%" alt="Test coverage" />
 <br />
 
 ### Development server
