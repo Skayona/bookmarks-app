@@ -1,0 +1,8 @@
+<div class="group-container">
+  <app-folder
+    *ngFor="let group of groups"
+    [name]="group"
+    [list]="bookmarks[group]"
+    (bookmarkRedirectHandler)="redirectHandler($event)"
+  ></app-folder>
+</div>

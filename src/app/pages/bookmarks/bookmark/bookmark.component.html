@@ -1,0 +1,26 @@
+<mat-card class="bookmark-card" *ngIf="bookmark$ | async as bookmark">
+  <mat-card-header>
+    <mat-card-title>🔖 Bookmark details</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list role="list">
+      <mat-list-item role="listitem"><strong>Name:&nbsp;</strong> {{ bookmark.name }}</mat-list-item>
+      <mat-list-item role="listitem"><strong>Link:&nbsp;</strong>
+        <a [href]="bookmark.url" target="_blank" rel="noopener noreferrer">{{ bookmark.url }}</a>
+      </mat-list-item>
+      <mat-list-item role="listitem"><strong>Group:&nbsp;</strong>
+        <mat-chip-list aria-label="Fish selection">
+          <mat-chip color="accent" selected> {{ bookmark.group }}</mat-chip>
+        </mat-chip-list>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+  <mat-card-actions>
+    <button
+      type="button"
+      mat-button
+      color="warn"
+      (click)="handleDelete(bookmark.id)"
+    >DELETE</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,45 @@
+<h2 mat-dialog-title>Add new bookmark</h2>
+<mat-dialog-content class="mat-typography">
+  <form
+    class="form"
+    (ngSubmit)="onSubmit($event)"
+    #bookmarkForm="ngForm"
+    [formGroup]="form"
+    id="bookmarkForm"
+    novalidate
+  >
+  <mat-form-field class="form__field">
+    <mat-label>Bookmark title</mat-label>
+    <input type="text" matInput formControlName="name" placeholder="My bookmark">
+    <mat-error *ngIf="form.get('name').hasError('required')" >
+      This field is required
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="form__field">
+    <mat-label>Link</mat-label>
+    <input type="text" matInput formControlName="url" placeholder="https://www.example.com">
+    <mat-error *ngIf="form.get('url').hasError('required')" >
+      This field is required
+    </mat-error>
+    <mat-error *ngIf="form.get('url').hasError('pattern')" >
+      Link format is invalid
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="form__field">
+    <mat-label>Bookmark group</mat-label>
+    <input type="text" matInput formControlName="group" placeholder="hobbies">
+    <mat-error *ngIf="form.get('group').hasError('required')" >
+      This field is required
+    </mat-error>
+  </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button
+    mat-button
+    form="bookmarkForm"
+    type="submit"
+    [disabled]="form.invalid"
+  >Submit</button>
+</mat-dialog-actions>

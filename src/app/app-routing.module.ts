@@ -1,7 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BookmarksModule } from './pages/bookmarks/bookmarks.module';
 
-const routes: Routes = [];
+const routes: Routes = [{
+  path: '',
+  pathMatch: 'full',
+  redirectTo: 'bookmarks'
+}, {
+  path: 'bookmarks',
+  loadChildren: () => BookmarksModule,
+}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

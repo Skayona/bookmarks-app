@@ -1,0 +1,32 @@
+:host {
+  position: relative;
+  display: block;
+  height: 100%;
+}
+
+.bookmarks-spinner {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.bookmarks {
+  display: grid;
+  row-gap: 40px;
+}
+
+.bookmarks__actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bookmarks__new {
+  margin-left: auto;
+}

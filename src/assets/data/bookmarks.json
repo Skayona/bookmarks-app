@@ -1,0 +1,34 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "github",
+      "url": "https://github.com/",
+      "group": "work"
+    },
+    {
+      "id": 2,
+      "name": "netflix",
+      "url": "https://www.netflix.com",
+      "group": "leisure"
+    },
+    {
+      "id": 3,
+      "name": "gmail",
+      "url": "https://mail.google.com/mail",
+      "group": "personal"
+    },
+    {
+      "id": 4,
+      "name": "codecademy",
+      "url": "https://www.codecademy.com/",
+      "group": "study"
+    },
+    {
+      "id": 5,
+      "name": "weather",
+      "url": "https://weather.com",
+      "group": "personal"
+    }
+  ]
+}

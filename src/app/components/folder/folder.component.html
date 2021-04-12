@@ -1,0 +1,17 @@
+<button
+  class="folder"
+  type="button"
+  mat-raised-button
+  [matMenuTriggerFor]="bookmarkMenu"
+  id="bookmarkMenu"
+>
+  {{ name }}
+</button>
+<mat-menu #bookmarkMenu="matMenu">
+  <a
+    class="redirect-btn"
+    *ngFor="let item of list"
+    (click)="redirectHandler($event, item)"
+    mat-menu-item
+  >{{ item.name }}</a>
+</mat-menu>

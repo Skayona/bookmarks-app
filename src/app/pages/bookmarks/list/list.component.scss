@@ -1,0 +1,6 @@
+.group-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  column-gap: 40px;
+  row-gap: 24px;
+}
