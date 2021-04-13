@@ -13,7 +13,8 @@ Bookmarks application allows you to collect and manage your most visited or favo
 <img src="screenshots/bookmarks-app_main-page_mobile.jpg" width="320" alt="Main page (mobile)" />
 <br />
 
-<p><strong>Add new bookmark (tablet)</strong></p>
+<p><strong>Add new bookmark (desktop)</strong></p>
+<img src="screenshots/bookmarks-app_add-new_desktop.jpg" width="100%" alt="Add new bookmark (desktop)" />
 <img src="screenshots/bookmarks-app_add-new_tablet.jpg" width="100%" alt="Add new bookmark (tablet)" />
 <br />
 
