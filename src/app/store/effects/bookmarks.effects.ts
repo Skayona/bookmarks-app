@@ -28,12 +28,19 @@ export class BookmarksEffects {
 
   addBookmark$ = createEffect(() => this.actions$.pipe(
     ofType(AddBookmark.type),
-    switchMap(({ bookmark }) => of(BookmarkAdded({ bookmark })))
-  ));
+    switchMap(({ bookmark }) => this.bookmarksService.addBookmark(bookmark).pipe(
+      map(() => BookmarkAdded({ bookmark })),
+      catchError((err) => of(BookmarksError(err)))
+    ))
+  ),
+  );
 
   deleteBookmark$ = createEffect(() => this.actions$.pipe(
     ofType(DeleteBookmark.type),
-    switchMap(({ id }) => of(BookmarkDeleted({ id })))
+    switchMap(({ dataKey }) => this.bookmarksService.deleteBookmark(dataKey).pipe(
+      map(() => BookmarkDeleted({ dataKey })),
+      catchError((err) => of(BookmarksError(err)))
+    ))
   ));
 
   constructor(

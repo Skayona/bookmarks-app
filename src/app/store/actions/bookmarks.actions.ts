@@ -56,10 +56,10 @@ export const BookmarkAdded = createAction(
 
 export const DeleteBookmark = createAction(
   BookmarksActions.DeleteBookmark,
-  props<{ id: number }>()
+  props<{ dataKey: string }>()
 );
 
 export const BookmarkDeleted = createAction(
   BookmarksActions.BookmarkDeleted,
-  props<{ id: number }>()
+  props<{ dataKey: string }>()
 );

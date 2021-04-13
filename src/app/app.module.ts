@@ -11,6 +11,9 @@ import { BookmarksService } from './services/bookmarks.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -25,8 +28,13 @@ import { FooterComponent } from './components/footer/footer.component';
     HttpClientModule,
     StoreModule.forRoot(appState),
     EffectsModule.forRoot(appEffects),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
-  providers: [BookmarksService],
+  providers: [
+    BookmarksService,
+    AngularFirestore
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

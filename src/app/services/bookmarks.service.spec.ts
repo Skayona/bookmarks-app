@@ -5,7 +5,7 @@ import { Bookmark } from '../store/models/bookmarks';
 import { BookmarksService } from './bookmarks.service';
 
 
-describe('BookmarksService', () => {
+xdescribe('BookmarksService', () => {
   let injector: TestBed;
   let service: BookmarksService;
   let httpMock: HttpTestingController;

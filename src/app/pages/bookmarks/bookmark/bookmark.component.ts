@@ -31,7 +31,7 @@ export class BookmarkComponent implements OnInit, OnDestroy {
     this.store.dispatch(ClearBookmark());
   }
 
-  handleDelete(id: number): void {
+  handleDelete(dataKey: string): void {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       data: {
         title: 'Confirm delete current bookmark'
@@ -40,7 +40,7 @@ export class BookmarkComponent implements OnInit, OnDestroy {
 
     dialogRef.afterClosed().subscribe((isConfirmed) => {
       if (isConfirmed) {
-        this.store.dispatch(DeleteBookmark({ id }));
+        this.store.dispatch(DeleteBookmark({ dataKey }));
         this.router.navigate(['./bookmarks']);
       }
     });

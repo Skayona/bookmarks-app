@@ -87,7 +87,7 @@ export const bookmarksReducerState = createReducer(initialState,
     return {
       ...state,
       loading: false,
-      bookmarks: state.bookmarks.filter(({ id }) => id !== payload.id)
+      bookmarks: state.bookmarks.filter(({ dataKey }) => dataKey !== payload.dataKey)
     };
   })
 );

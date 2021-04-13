@@ -58,7 +58,7 @@ describe('BookmarksEffects', () => {
     });
   });
 
-  describe('addBookmark$', () => {
+  xdescribe('addBookmark$', () => {
     it('should create new bookmark', () => {
       actions$ = hot('-a', { a: { type: BookmarksActions.AddBookmark, bookmark }});
       const expected = hot('-a', {
@@ -71,7 +71,7 @@ describe('BookmarksEffects', () => {
     });
   });
 
-  describe('deleteBookmark$', () => {
+  xdescribe('deleteBookmark$', () => {
     it('should delete bookmark', () => {
       actions$ = hot('-a', { a: { type: BookmarksActions.DeleteBookmark, id: 1 }});
       const expected = hot('-a', {
