@@ -1,7 +1,10 @@
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AddBookmarkComponent } from './add-bookmark.component';
 
@@ -15,13 +18,17 @@ describe('AddBookmarkComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ AddBookmarkComponent ],
       imports: [
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MatSelectModule,
+        MatInputModule,
+        NoopAnimationsModule
       ],
       providers: [
-        { provide: MatDialogRef, useValue: fakeMatDialogValue }
+        { provide: MatDialogRef, useValue: fakeMatDialogValue },
+        { provide: MAT_DIALOG_DATA, useValue: { data: { groups: ['test-group'] }}}
       ],
       schemas: [
-        CUSTOM_ELEMENTS_SCHEMA
+        CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA
       ]
     })
     .compileComponents();
@@ -53,7 +60,8 @@ describe('AddBookmarkComponent', () => {
     component.form.setValue({
       name: 'test name',
       url: 'https://test.com',
-      group: 'test group'
+      group: 'test group',
+      newGroup: ''
     });
     const event = new Event('click');
     spyOn(component, 'onSubmit').and.callThrough();

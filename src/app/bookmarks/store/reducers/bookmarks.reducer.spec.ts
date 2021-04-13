@@ -16,6 +16,7 @@ import { BookmarksReducerState } from './bookmarks.reducer';
 describe('BookmarksReducer', () => {
   const bookmark: Bookmark = {
     id: 1,
+    dataKey: '1',
     name: 'testBookmark',
     url: 'testLink',
     group: 'testGroup'
@@ -148,7 +149,7 @@ describe('BookmarksReducer', () => {
         ...initialState,
         loading: true
       };
-      const action = DeleteBookmark({ id: 1 });
+      const action = DeleteBookmark({ dataKey: '1' });
       const state = fromReducer.bookmarksReducer(initialState, action);
 
       expect(state).toEqual(newState);
@@ -163,7 +164,7 @@ describe('BookmarksReducer', () => {
         ...initialState,
         bookmarks: initialState.bookmarks.filter(({ id }) => id !== 1)
       };
-      const action = BookmarkDeleted({ id: 1 });
+      const action = BookmarkDeleted({ dataKey: '1' });
       const state = fromReducer.bookmarksReducer(initialState, action);
 
       expect(state).toEqual(newState);

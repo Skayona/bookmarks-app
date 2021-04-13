@@ -28,8 +28,11 @@ describe('BookmarksListComponent', () => {
     fixture = TestBed.createComponent(BookmarksListComponent);
     component = fixture.componentInstance;
     store = TestBed.inject(MockStore);
-    component.bookmarks$ = store.pipe(pluck('bookmarks'));
     fixture.detectChanges();
+  });
+
+  afterEach(() => {
+    fixture.destroy();
   });
 
   it('should create', () => {

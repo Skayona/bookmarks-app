@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 
 import { BookmarksComponent } from './bookmarks.component';
-import { initialState } from '../../store/reducers/bookmarks.reducer';
+import { initialState } from './store/reducers/bookmarks.reducer';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MatDialogModule } from '@angular/material/dialog';
 import { pluck } from 'rxjs/operators';
@@ -34,8 +34,11 @@ describe('BookmarksComponent', () => {
     fixture = TestBed.createComponent(BookmarksComponent);
     component = fixture.componentInstance;
     store = TestBed.inject(MockStore);
-    component.isLoading$ = store.pipe(pluck('loading'));
     fixture.detectChanges();
+  });
+
+  afterEach(() => {
+    fixture.destroy();
   });
 
   it('should create', () => {

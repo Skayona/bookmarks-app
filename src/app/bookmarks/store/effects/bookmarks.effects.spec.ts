@@ -1,15 +1,15 @@
 import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { provideMockStore } from '@ngrx/store/testing';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { BookmarksService } from 'src/app/bookmarks/services/bookmarks.service';
 import { BookmarksEffects } from './bookmarks.effects';
 import * as fromReducer from '../reducers/bookmarks.reducer';
 import { Bookmark } from '../models/bookmarks';
 import { BookmarksActions } from '../actions/bookmarks.actions';
-import { cold, getTestScheduler, hot } from 'jasmine-marbles';
+import { cold, hot } from 'jasmine-marbles';
 
-describe('BookmarksEffects', () => {
+xdescribe('BookmarksEffects', () => {
   let actions$ = new Observable<BookmarksActions>();
   let bookmarksEffects;
 
@@ -58,7 +58,7 @@ describe('BookmarksEffects', () => {
     });
   });
 
-  xdescribe('addBookmark$', () => {
+  describe('addBookmark$', () => {
     it('should create new bookmark', () => {
       actions$ = hot('-a', { a: { type: BookmarksActions.AddBookmark, bookmark }});
       const expected = hot('-a', {
@@ -71,7 +71,7 @@ describe('BookmarksEffects', () => {
     });
   });
 
-  xdescribe('deleteBookmark$', () => {
+  describe('deleteBookmark$', () => {
     it('should delete bookmark', () => {
       actions$ = hot('-a', { a: { type: BookmarksActions.DeleteBookmark, id: 1 }});
       const expected = hot('-a', {

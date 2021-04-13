@@ -42,8 +42,11 @@ describe('BookmarkComponent', () => {
     fixture = TestBed.createComponent(BookmarkComponent);
     component = fixture.componentInstance;
     store = TestBed.inject(MockStore);
-    component.bookmark$ = store.pipe(pluck('bookmark'));
     fixture.detectChanges();
+  });
+
+  afterEach(() => {
+    fixture.destroy();
   });
 
   it('should create', () => {
