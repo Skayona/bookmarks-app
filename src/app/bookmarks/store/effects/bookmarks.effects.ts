@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
 import { map, catchError, switchMap } from 'rxjs/operators';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { BookmarksService } from 'src/app/services/bookmarks.service';
+import { BookmarksService } from 'src/app/bookmarks/services/bookmarks.service';
 import {
   AddBookmark,
   BookmarkAdded,

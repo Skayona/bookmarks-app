@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { provideMockStore } from '@ngrx/store/testing';
 import { Observable, of } from 'rxjs';
-import { BookmarksService } from 'src/app/services/bookmarks.service';
+import { BookmarksService } from 'src/app/bookmarks/services/bookmarks.service';
 import { BookmarksEffects } from './bookmarks.effects';
 import * as fromReducer from '../reducers/bookmarks.reducer';
 import { Bookmark } from '../models/bookmarks';

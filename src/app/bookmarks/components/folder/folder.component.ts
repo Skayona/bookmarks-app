@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Bookmark } from 'src/app/store/models/bookmarks';
+import { Bookmark } from 'src/app/bookmarks/store/models/bookmarks';
 
 @Component({
   selector: 'app-folder',

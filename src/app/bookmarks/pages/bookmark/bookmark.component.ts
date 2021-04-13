@@ -1,12 +1,12 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { AppState, selectBookmark } from 'src/app/store';
-import { ClearBookmark, DeleteBookmark, GetBookmark } from 'src/app/store/actions/bookmarks.actions';
-import { Bookmark } from 'src/app/store/models/bookmarks';
+import { AppState, selectBookmark } from 'src/app/bookmarks/store';
+import { ClearBookmark, DeleteBookmark, GetBookmark } from 'src/app/bookmarks/store/actions/bookmarks.actions';
+import { Bookmark } from 'src/app/bookmarks/store/models/bookmarks';
 import { MatDialog } from '@angular/material/dialog';
-import { ConfirmDialogComponent } from 'src/app/components/confirm-dialog/confirm-dialog.component';
 import { Router } from '@angular/router';
+import { ConfirmDialogComponent } from 'src/app/components/confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-bookmark',

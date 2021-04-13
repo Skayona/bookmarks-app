@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatMenuModule } from '@angular/material/menu';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { Bookmark } from 'src/app/store/models/bookmarks';
+import { Bookmark } from 'src/app/bookmarks/store/models/bookmarks';
 import { MatMenuHarness } from '@angular/material/menu/testing';
 import { ​TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
 

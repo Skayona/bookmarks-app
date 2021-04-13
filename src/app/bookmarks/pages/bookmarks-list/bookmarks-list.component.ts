@@ -3,16 +3,16 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { AppState, selectBookmarks } from 'src/app/store';
-import { SetBookmark } from 'src/app/store/actions/bookmarks.actions';
-import { Bookmark } from 'src/app/store/models/bookmarks';
+import { AppState, selectBookmarks } from 'src/app/bookmarks/store';
+import { SetBookmark } from 'src/app/bookmarks/store/actions/bookmarks.actions';
+import { Bookmark } from 'src/app/bookmarks/store/models/bookmarks';
 
 @Component({
   selector: 'app-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss']
+  templateUrl: './bookmarks-list.component.html',
+  styleUrls: ['./bookmarks-list.component.scss']
 })
-export class ListComponent implements OnInit, OnDestroy {
+export class BookmarksListComponent implements OnInit, OnDestroy {
   private alive$ = new Subject();
   bookmarks$: Observable<Bookmark[]>;
 

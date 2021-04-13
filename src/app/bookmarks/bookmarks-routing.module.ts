@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BookmarkGuard } from 'src/app/guards/bookmark.guard';
-import { BookmarkComponent } from './bookmark/bookmark.component';
+import { BookmarkGuard } from 'src/app/bookmarks/guards/bookmark.guard';
+import { BookmarksListComponent } from './pages/bookmarks-list/bookmarks-list.component';
+import { BookmarkComponent } from './pages/bookmark/bookmark.component';
 import { BookmarksComponent } from './bookmarks.component';
-import { ListComponent } from './list/list.component';
 
 const routes: Routes = [{
   path: '',
@@ -11,7 +11,7 @@ const routes: Routes = [{
   children: [{
     path: '',
     pathMatch: 'full',
-    component: ListComponent,
+    component: BookmarksListComponent,
   }, {
     path: ':id',
     component: BookmarkComponent,

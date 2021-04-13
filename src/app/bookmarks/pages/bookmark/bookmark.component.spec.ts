@@ -4,7 +4,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { pluck } from 'rxjs/operators';
-import { selectBookmark } from 'src/app/store';
+import { selectBookmark } from 'src/app/bookmarks/store';
 
 import { BookmarkComponent } from './bookmark.component';
 

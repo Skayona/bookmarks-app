@@ -1,14 +1,14 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListComponent } from './list.component';
-import { initialState } from '../../../store/reducers/bookmarks.reducer';
+import { BookmarksListComponent } from './bookmarks-list.component';
+import { initialState } from '../../store/reducers/bookmarks.reducer';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { pluck } from 'rxjs/operators';
 
-describe('ListComponent', () => {
-  let component: ListComponent;
-  let fixture: ComponentFixture<ListComponent>;
+describe('BookmarksListComponent', () => {
+  let component: BookmarksListComponent;
+  let fixture: ComponentFixture<BookmarksListComponent>;
   let store: MockStore;
 
   beforeEach(async () => {
@@ -16,7 +16,7 @@ describe('ListComponent', () => {
       imports: [
         RouterTestingModule
       ],
-      declarations: [ ListComponent ],
+      declarations: [ BookmarksListComponent ],
       providers: [
         provideMockStore({ initialState }),
       ],
@@ -25,7 +25,7 @@ describe('ListComponent', () => {
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListComponent);
+    fixture = TestBed.createComponent(BookmarksListComponent);
     component = fixture.componentInstance;
     store = TestBed.inject(MockStore);
     component.bookmarks$ = store.pipe(pluck('bookmarks'));

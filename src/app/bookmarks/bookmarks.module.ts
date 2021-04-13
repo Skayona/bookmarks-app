@@ -2,23 +2,23 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { BookmarksRoutingModule } from './bookmarks-routing.module';
-import { BookmarksComponent } from './bookmarks.component';
-import { FolderModule } from 'src/app/components/folder/folder.module';
-import { ListComponent } from './list/list.component';
-import { BookmarkComponent } from './bookmark/bookmark.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatChipsModule } from '@angular/material/chips';
-import { ConfirmDialogModule } from 'src/app/components/confirm-dialog/confirm-dialog.module';
-import { AddBookmarkModule } from 'src/app/components/add-bookmark/add-bookmark.module';
+import { AddBookmarkModule } from 'src/app/bookmarks/components/add-bookmark/add-bookmark.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { BookmarksListComponent } from './pages/bookmarks-list/bookmarks-list.component';
+import { BookmarkComponent } from './pages/bookmark/bookmark.component';
+import { FolderModule } from './components/folder/folder.module';
+import { ConfirmDialogModule } from '../components/confirm-dialog/confirm-dialog.module';
+import { BookmarksComponent } from './bookmarks.component';
 
 
 @NgModule({
   declarations: [
     BookmarksComponent,
-    ListComponent,
+    BookmarksListComponent,
     BookmarkComponent,
   ],
   imports: [

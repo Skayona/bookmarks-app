@@ -4,10 +4,10 @@ import { NavigationEnd, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable, of, Subject } from 'rxjs';
 import { filter, map, takeUntil } from 'rxjs/operators';
-import { AddBookmarkComponent } from 'src/app/components/add-bookmark/add-bookmark.component';
-import { AppState, selectBookmarks, selectBookmarksLoading } from 'src/app/store';
-import { AddBookmark, GetBookmarks } from 'src/app/store/actions/bookmarks.actions';
-import { Bookmark } from 'src/app/store/models/bookmarks';
+import { AddBookmarkComponent } from 'src/app/bookmarks/components/add-bookmark/add-bookmark.component';
+import { AppState, selectBookmarks, selectBookmarksLoading } from 'src/app/bookmarks/store';
+import { AddBookmark, GetBookmarks } from 'src/app/bookmarks/store/actions/bookmarks.actions';
+import { Bookmark } from 'src/app/bookmarks/store/models/bookmarks';
 
 @Component({
   selector: 'app-bookmarks',
