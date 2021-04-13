@@ -17,7 +17,7 @@ export class ListComponent implements OnInit, OnDestroy {
   bookmarks$: Observable<Bookmark[]>;
 
   bookmarks: { [key: string]: Bookmark[] } = {};
-  groups: string[];
+  groups: string[] = [];
 
   constructor(
     private store: Store<AppState>,

@@ -5,7 +5,7 @@ import { Store } from '@ngrx/store';
 import { Observable, of, Subject } from 'rxjs';
 import { filter, map, takeUntil } from 'rxjs/operators';
 import { AddBookmarkComponent } from 'src/app/components/add-bookmark/add-bookmark.component';
-import { AppState, selectBookmarksLoading } from 'src/app/store';
+import { AppState, selectBookmarks, selectBookmarksLoading } from 'src/app/store';
 import { AddBookmark, GetBookmarks } from 'src/app/store/actions/bookmarks.actions';
 import { Bookmark } from 'src/app/store/models/bookmarks';
 
@@ -19,6 +19,7 @@ export class BookmarksComponent implements OnInit, OnDestroy {
   isLoading$: Observable<boolean> = of(true);
 
   isHomePage = true;
+  groups: string[] = [];
 
   constructor(
     private store: Store<AppState>,
@@ -34,6 +35,13 @@ export class BookmarksComponent implements OnInit, OnDestroy {
       this.isHomePage = isHomePage;
     });
     this.isLoading$ = store.select(selectBookmarksLoading);
+
+    const bookmarks$ = store.select(selectBookmarks);
+    bookmarks$.pipe(
+      takeUntil(this.alive$)
+    ).subscribe((bookmarks) => {
+      this.groups = [...new Set(bookmarks.map(({ group }) => group))];
+    });
   }
 
   ngOnInit(): void {}
@@ -44,7 +52,11 @@ export class BookmarksComponent implements OnInit, OnDestroy {
   }
 
   addBookmarkHandler(): void {
-    const dialogRef = this.dialog.open(AddBookmarkComponent);
+    const dialogRef = this.dialog.open(AddBookmarkComponent, {
+      data: {
+        groups: this.groups
+      }
+    });
 
     dialogRef.afterClosed().subscribe((data) => {
       if (data) {

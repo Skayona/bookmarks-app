@@ -5,6 +5,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { MatInputModule } from '@angular/material/input';
     MatButtonModule,
     FormsModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule
   ],
   exports: [
     AddBookmarkComponent

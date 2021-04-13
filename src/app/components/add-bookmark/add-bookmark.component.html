@@ -25,10 +25,20 @@
       Link format is invalid
     </mat-error>
   </mat-form-field>
-  <mat-form-field class="form__field">
-    <mat-label>Bookmark group</mat-label>
-    <input type="text" matInput formControlName="group" placeholder="hobbies">
+  <mat-form-field appearance="fill">
+    <mat-label>Select bookmark group</mat-label>
+    <mat-select disableRipple formControlName="group">
+      <mat-option *ngFor="let group of data.groups" [value]="group">{{ group }}</mat-option>
+      <mat-option [value]="createNewOpt">Create new group</mat-option>
+    </mat-select>
     <mat-error *ngIf="form.get('group').hasError('required')" >
+      This field is required
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="form__field" *ngIf="isCreateNewGroupEnable">
+    <mat-label>New bookmark group</mat-label>
+    <input type="text" matInput formControlName="newGroup" placeholder="hobbies">
+    <mat-error *ngIf="form.get('newGroup').hasError('required')" >
       This field is required
     </mat-error>
   </mat-form-field>
